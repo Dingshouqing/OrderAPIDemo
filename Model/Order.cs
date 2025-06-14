@@ -23,7 +23,7 @@ namespace OrderWebAPI.Model
         /// <summary>
         /// Created At
         /// </summary>
-        public DateTime? CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// Order Items

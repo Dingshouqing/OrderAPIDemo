@@ -27,7 +27,7 @@ namespace OrderWebAPI.Data
                 .HasMaxLength(100);
                 
                 entity.Property(p => p.CreatedAt)
-                .IsRequired(false);
+                .IsRequired();
 
                 entity.HasMany(e => e.OrderItems)
                 .WithOne(e => e.Order)
@@ -57,48 +57,49 @@ namespace OrderWebAPI.Data
 
         private static void SeedData(ModelBuilder modelBuilder)
         {
-            // seed data
-            var order1 = new Order
-            {
-                OrderId = Guid.NewGuid(),
-                CustomerName = "Apple",
-                CreatedAt = DateTime.UtcNow.AddDays(-1),
-                OrderItems = new List<OrderItem>
-                {
-                    new OrderItem
-                    {
-                        ProductId = "P1",
-                        Quantity = 1
-                    },
-                    new OrderItem
-                    {
-                        ProductId = "P2",
-                        Quantity = 2
-                    }
-                }
-            };
-            modelBuilder.Entity<Order>().HasData(order1);
+            var orderId1 = Guid.NewGuid();
+            var orderId2 = Guid.NewGuid();
 
-            var order2 = new Order
-            {
-                OrderId = Guid.NewGuid(),
-                CustomerName = "Dell",
-                CreatedAt = DateTime.UtcNow.AddDays(-2),
-                OrderItems = new List<OrderItem>
+            // Seed Orders
+            modelBuilder.Entity<Order>().HasData(
+                new Order
                 {
-                    new OrderItem
-                    {
-                        ProductId = "P3",
-                        Quantity = 3
-                    },
-                    new OrderItem
-                    {
-                        ProductId = "P4",
-                        Quantity = 4
-                    }
+                    OrderId = orderId1,
+                    CustomerName = "John Doe",
+                    CreatedAt = DateTime.UtcNow.AddDays(-1)
+                },
+                new Order
+                {
+                    OrderId = orderId2,
+                    CustomerName = "Jane Smith",
+                    CreatedAt = DateTime.UtcNow.AddHours(-2)
                 }
-            };
-            modelBuilder.Entity<Order>().HasData(order2);
+            );
+
+            // Seed OrderItems
+            modelBuilder.Entity<OrderItem>().HasData(
+                new OrderItem
+                {
+                    Id = 1,
+                    OrderId = orderId1,
+                    ProductId = "PROD001",
+                    Quantity = 2
+                },
+                new OrderItem
+                {
+                    Id = 2,
+                    OrderId = orderId1,
+                    ProductId = "PROD002",
+                    Quantity = 1
+                },
+                new OrderItem
+                {
+                    Id = 3,
+                    OrderId = orderId2,
+                    ProductId = "PROD003",
+                    Quantity = 3
+                }
+            );
         }
     }
 }

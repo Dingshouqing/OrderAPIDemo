@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using OrderWebAPI.Data;
 using OrderWebAPI.Repositories;
 using OrderWebAPI.Repositories.Concrete;
+using OrderWebAPI.Services;
+using OrderWebAPI.Services.Concrete;
 using Serilog;
 
 namespace OrderWebAPI
@@ -42,6 +44,7 @@ namespace OrderWebAPI
 
             // Register repositories
             builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+            builder.Services.AddScoped<IOrderService, OrderService>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

@@ -1,6 +1,50 @@
-@OrderWebAPI_HostAddress = http://localhost:5009
+@OrderWebAPI_HostAddress = http://localhost:5009/api
 
-GET {{OrderWebAPI_HostAddress}}/weatherforecast/
+### Get all orders
+GET {{OrderWebAPI_HostAddress}}/Orders
 Accept: application/json
 
-###
+### Get order
+GET {{OrderWebAPI_HostAddress}}/Orders/3845fffc-cfec-42e4-a9b4-8b84931620f6
+Accept: application/json
+
+### Order not found, should return 404
+GET {{OrderWebAPI_HostAddress}}/Orders/3845fffc-cfec-42e4-a9b4-8b84931620f1
+Accept: application/json
+
+### Create new order
+POST {{OrderWebAPI_HostAddress}}/Orders
+content-type: application/json
+
+{
+  "OrderId":null,
+  "CustomerName":"Test Customer",
+  "OrderItems":[
+    {
+      "ProductId":"PROD001",
+      "Quantity":10
+    },
+    {
+      "ProductId":"PROD002",
+      "Quantity":20
+    }
+  ]
+}
+
+### Create new order, validate request failed should return 400 Bad request.
+POST {{OrderWebAPI_HostAddress}}/Orders
+content-type: application/json
+
+{
+  "OrderId":null,
+  "CustomerName":"Test Customer",
+  "OrderItems":[
+    {
+      "ProductId":"PROD001aa",
+      "Quantity":100000000000000
+    },
+    {
+      "Quantity":20
+    }
+  ]
+}
