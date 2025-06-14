@@ -17,7 +17,26 @@ POST {{OrderWebAPI_HostAddress}}/Orders
 content-type: application/json
 
 {
-  "OrderId":null,
+  "OrderId":"null",
+  "CustomerName":"Test Customer",
+  "OrderItems":[
+    {
+      "ProductId":"PROD001",
+      "Quantity":10
+    },
+    {
+      "ProductId":"PROD002",
+      "Quantity":20
+    }
+  ]
+}
+
+### Create new order with existing id then failed
+POST {{OrderWebAPI_HostAddress}}/Orders
+content-type: application/json
+
+{
+  "OrderId":"e0dc5d2c-441a-4184-828a-801dcaf6a4cb",
   "CustomerName":"Test Customer",
   "OrderItems":[
     {

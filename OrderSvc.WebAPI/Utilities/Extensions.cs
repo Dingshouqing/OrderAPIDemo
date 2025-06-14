@@ -6,22 +6,32 @@ namespace OrderSvc.WebAPI.Utilities
 {
     public static class Extensions
     {
+        /// <summary>
+        /// Maps a CreateOrderRequest DTO to an Order entity
+        /// </summary>
+        /// <param name="request">The order creation request containing customer and item information</param>
+        /// <returns>A new Order entity with mapped properties and generated timestamps</returns>
         public static Order MapToOrder(this CreateOrderRequest request)
         {
             return new Order
             {
-                OrderId = request.OrderId.Value,
+                OrderId = request.OrderId ?? Guid.NewGuid(),
                 CustomerName = request.CustomerName.Trim(),
                 CreatedAt = DateTime.UtcNow,
                 OrderItems = request.OrderItems.Select(item => new OrderItem
                 {
                     ProductId = item.ProductId.Trim(),
                     Quantity = item.Quantity,
-                    OrderId = request.OrderId.Value
+                    OrderId = request.OrderId ?? Guid.NewGuid()
                 }).ToList()
             };
         }
 
+        /// <summary>
+        /// Maps an Order entity to a CreateOrderResponse DTO
+        /// </summary>
+        /// <param name="order">The order entity to map</param>
+        /// <returns>A CreateOrderResponse DTO with mapped order and item information</returns>
         public static CreateOrderResponse MapToOrderResponse(this Order order)
         {
             return new CreateOrderResponse
@@ -37,6 +47,11 @@ namespace OrderSvc.WebAPI.Utilities
             };
         }
 
+        /// <summary>
+        /// Validates a CreateOrderRequest for required fields and business rules
+        /// </summary>
+        /// <param name="request">The order creation request to validate</param>
+        /// <exception cref="InvalidOrderDataException">Thrown when validation fails due to missing or invalid data</exception>
         public static void ValidateCreateOrderRequest(this CreateOrderRequest request)
         {
             if (string.IsNullOrWhiteSpace(request.CustomerName))

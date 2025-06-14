@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+using OrderSvc.DataContract;
 using OrderSvc.WebAPI.Data;
 using OrderSvc.WebAPI.Repositories;
 using OrderSvc.WebAPI.Repositories.Concrete;
@@ -11,6 +12,12 @@ namespace OrderWebAPI
 {
     public class Program
     {
+        private const string LogPath = "logs\\log.txt";
+
+        /// <summary>
+        /// The main entry point for the Order Web API application
+        /// </summary>
+        /// <param name="args">Command line arguments</param>
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
@@ -22,7 +29,7 @@ namespace OrderWebAPI
                 .ReadFrom.Configuration(builder.Configuration)
                 .Enrich.FromLogContext()
                 .WriteTo.Console()
-                .WriteTo.File("logs\\log.txt", rollingInterval: RollingInterval.Day)
+                .WriteTo.File(LogPath, rollingInterval: RollingInterval.Day)
                 .CreateLogger();
             builder.Host.UseSerilog();
 
@@ -39,7 +46,8 @@ namespace OrderWebAPI
             // Configure Entity Framework Core
             builder.Services.AddDbContext<OrderDbContext>(options =>
             {
-                options.UseSqlite(builder.Configuration.GetConnectionString("OrderContext"));
+                if (!builder.Environment.EnvironmentName.Equals(Constrants.TestEnvironment))
+                    options.UseSqlite(builder.Configuration.GetConnectionString(Constrants.DBConnectionStringKey));
             });
 
             // Register repositories
@@ -71,7 +79,7 @@ namespace OrderWebAPI
             app.MapControllers();
 
             // Ensure database is created and seeded
-            using(var scope = app.Services.CreateScope())
+            using (var scope = app.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
                 var context = services.GetRequiredService<OrderDbContext>();

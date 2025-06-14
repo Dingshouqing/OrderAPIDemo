@@ -5,6 +5,10 @@ namespace OrderSvc.WebAPI.Data
 {
     public class OrderDbContext : DbContext
     {
+        /// <summary>
+        /// Initializes a new instance of the OrderDbContext class with specified options
+        /// </summary>
+        /// <param name="options">The database context options</param>
         public OrderDbContext(DbContextOptions<OrderDbContext> options) : base(options)
         {
         }
@@ -21,11 +25,11 @@ namespace OrderSvc.WebAPI.Data
             modelBuilder.Entity<Order>(entity =>
             {
                 entity.HasKey(e => e.OrderId);
-               
+
                 entity.Property(p => p.CustomerName)
                 .IsRequired()
                 .HasMaxLength(100);
-                
+
                 entity.Property(p => p.CreatedAt)
                 .IsRequired();
 
@@ -101,5 +105,6 @@ namespace OrderSvc.WebAPI.Data
                 }
             );
         }
+
     }
 }

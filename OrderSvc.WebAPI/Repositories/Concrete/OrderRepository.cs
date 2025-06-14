@@ -6,6 +6,11 @@ namespace OrderSvc.WebAPI.Repositories.Concrete
 {
     public class OrderRepository(OrderDbContext _context, ILogger<OrderRepository> _logger) : IOrderRepository
     {
+        /// <summary>
+        /// Retrieves an order by its unique identifier including its order items
+        /// </summary>
+        /// <param name="orderId">The unique identifier of the order to retrieve</param>
+        /// <returns>The order with its items if found, otherwise null</returns>
         public async Task<Order?> GetByIdAsync(Guid orderId)
         {
             try
@@ -23,6 +28,10 @@ namespace OrderSvc.WebAPI.Repositories.Concrete
             }
         }
 
+        /// <summary>
+        /// Retrieves all orders from the database including their order items, ordered by creation date
+        /// </summary>
+        /// <returns>Collection of all orders with their items, ordered by most recent first</returns>
         public async Task<IEnumerable<Order>> GetAllAsync()
         {
             try
@@ -41,7 +50,12 @@ namespace OrderSvc.WebAPI.Repositories.Concrete
             }
         }
 
-        public async Task<Order> CreateAsync(Order order)
+        /// <summary>
+        /// Creates a new order in the database
+        /// </summary>
+        /// <param name="order">The order entity to create</param>
+        /// <returns>The created order with generated ID and timestamps</returns>
+        public async Task<Order?> CreateAsync(Order order)
         {
             try
             {
@@ -60,7 +74,12 @@ namespace OrderSvc.WebAPI.Repositories.Concrete
             }
         }
 
-        public async Task<Order> UpdateAsync(Order order)
+        /// <summary>
+        /// Updates an existing order in the database
+        /// </summary>
+        /// <param name="order">The order entity with updated values</param>
+        /// <returns>The updated order entity</returns>
+        public async Task<Order?> UpdateAsync(Order order)
         {
             try
             {
@@ -78,6 +97,11 @@ namespace OrderSvc.WebAPI.Repositories.Concrete
             }
         }
 
+        /// <summary>
+        /// Deletes an order from the database by its unique identifier
+        /// </summary>
+        /// <param name="orderId">The unique identifier of the order to delete</param>
+        /// <returns>True if the order was successfully deleted, false if the order was not found</returns>
         public async Task<bool> DeleteAsync(Guid orderId)
         {
             try
@@ -102,6 +126,11 @@ namespace OrderSvc.WebAPI.Repositories.Concrete
             }
         }
 
+        /// <summary>
+        /// Checks if an order exists in the database by its unique identifier
+        /// </summary>
+        /// <param name="orderId">The unique identifier of the order to check</param>
+        /// <returns>True if the order exists, false otherwise</returns>
         public async Task<bool> ExistsAsync(Guid orderId)
         {
             try
