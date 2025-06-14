@@ -1,4 +1,4 @@
-﻿namespace Order.Tests.Repositories
+﻿namespace OrderSvc.Tests.Repositories
 {
     public class OrderRepositoryUnitTests
     {

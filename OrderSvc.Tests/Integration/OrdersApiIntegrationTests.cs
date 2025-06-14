@@ -1,5 +1,5 @@
 ﻿
-namespace Order.Tests.Integration
+namespace OrderSvc.Tests.Integration
 {
     public class OrdersApiIntegrationTests
     {

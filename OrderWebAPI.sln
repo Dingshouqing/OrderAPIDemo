@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36203.30
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderSvc.WebAPI", "Order.WebAPI\OrderSvc.WebAPI.csproj", "{A040E7E5-F19B-A397-CA77-EF49E124F3F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderSvc.DataContract", "OrderSvc.DataContract\OrderSvc.DataContract.csproj", "{51FA4F52-FAEB-967A-3CB8-B78AEFCB1FB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Tests", "Order.Tests\Order.Tests.csproj", "{614353FC-69AA-0357-4566-4752D36B7416}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderSvc.Tests", "OrderSvc.Tests\OrderSvc.Tests.csproj", "{3BF37FEE-49EE-A4A4-0CFC-FE6D2CA6EA6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderSvc.DataContract", "..\Order.DataContract\OrderSvc.DataContract.csproj", "{1606A703-2851-4A0E-8A72-ADA584E6B1CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderSvc.WebAPI", "OrderSvc.WebAPI\OrderSvc.WebAPI.csproj", "{D68DD006-FFAA-EDCB-B1EB-76D9A8641FD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A040E7E5-F19B-A397-CA77-EF49E124F3F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A040E7E5-F19B-A397-CA77-EF49E124F3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A040E7E5-F19B-A397-CA77-EF49E124F3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A040E7E5-F19B-A397-CA77-EF49E124F3F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{614353FC-69AA-0357-4566-4752D36B7416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{614353FC-69AA-0357-4566-4752D36B7416}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{614353FC-69AA-0357-4566-4752D36B7416}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{614353FC-69AA-0357-4566-4752D36B7416}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1606A703-2851-4A0E-8A72-ADA584E6B1CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1606A703-2851-4A0E-8A72-ADA584E6B1CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1606A703-2851-4A0E-8A72-ADA584E6B1CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1606A703-2851-4A0E-8A72-ADA584E6B1CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51FA4F52-FAEB-967A-3CB8-B78AEFCB1FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51FA4F52-FAEB-967A-3CB8-B78AEFCB1FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51FA4F52-FAEB-967A-3CB8-B78AEFCB1FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51FA4F52-FAEB-967A-3CB8-B78AEFCB1FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BF37FEE-49EE-A4A4-0CFC-FE6D2CA6EA6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BF37FEE-49EE-A4A4-0CFC-FE6D2CA6EA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BF37FEE-49EE-A4A4-0CFC-FE6D2CA6EA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BF37FEE-49EE-A4A4-0CFC-FE6D2CA6EA6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D68DD006-FFAA-EDCB-B1EB-76D9A8641FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D68DD006-FFAA-EDCB-B1EB-76D9A8641FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D68DD006-FFAA-EDCB-B1EB-76D9A8641FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D68DD006-FFAA-EDCB-B1EB-76D9A8641FD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
