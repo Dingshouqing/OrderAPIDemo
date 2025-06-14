@@ -1,6 +1,6 @@
-﻿using OrderWebAPI.DTOs;
+﻿using OrderSvc.DataContract.DTOs;
 
-namespace OrderWebAPI.Services
+namespace OrderSvc.WebAPI.Services
 {
     public interface IOrderService
     {

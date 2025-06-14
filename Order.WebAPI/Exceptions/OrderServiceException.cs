@@ -1,4 +1,4 @@
-﻿namespace OrderWebAPI.Exceptions
+﻿namespace OrderSvc.WebAPI.Exceptions
 {
     public class OrderServiceException : Exception
     {

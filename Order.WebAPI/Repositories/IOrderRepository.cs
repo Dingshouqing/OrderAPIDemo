@@ -1,6 +1,6 @@
-﻿using OrderWebAPI.Model;
+﻿using OrderSvc.DataContract.Model;
 
-namespace OrderWebAPI.Repositories
+namespace OrderSvc.WebAPI.Repositories
 {
     public interface IOrderRepository
     {

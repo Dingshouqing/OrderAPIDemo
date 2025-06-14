@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OrderWebAPI.DTOs;
-using OrderWebAPI.Exceptions;
-using OrderWebAPI.Services;
+using OrderSvc.DataContract.DTOs;
+using OrderSvc.WebAPI.Exceptions;
+using OrderSvc.WebAPI.Services;
 
-namespace OrderWebAPI.Controllers
+namespace OrderSvc.WebAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

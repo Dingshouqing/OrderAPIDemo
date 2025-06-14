@@ -1,9 +1,9 @@
-﻿using OrderWebAPI.DTOs;
-using OrderWebAPI.Exceptions;
-using OrderWebAPI.Repositories;
-using OrderWebAPI.Utilities;
+﻿using OrderSvc.DataContract.DTOs;
+using OrderSvc.WebAPI.Exceptions;
+using OrderSvc.WebAPI.Repositories;
+using OrderSvc.WebAPI.Utilities;
 
-namespace OrderWebAPI.Services.Concrete
+namespace OrderSvc.WebAPI.Services.Concrete
 {
     public class OrderService(IOrderRepository _orderRepository, ILogger<OrderService> _logger) : IOrderService
     {

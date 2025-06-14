@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OrderWebAPI.Model;
+using OrderSvc.DataContract.Model;
 
-namespace OrderWebAPI.Data
+namespace OrderSvc.WebAPI.Data
 {
     public class OrderDbContext : DbContext
     {

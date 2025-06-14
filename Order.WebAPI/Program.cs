@@ -1,10 +1,10 @@
 
 using Microsoft.EntityFrameworkCore;
-using OrderWebAPI.Data;
-using OrderWebAPI.Repositories;
-using OrderWebAPI.Repositories.Concrete;
-using OrderWebAPI.Services;
-using OrderWebAPI.Services.Concrete;
+using OrderSvc.WebAPI.Data;
+using OrderSvc.WebAPI.Repositories;
+using OrderSvc.WebAPI.Repositories.Concrete;
+using OrderSvc.WebAPI.Services;
+using OrderSvc.WebAPI.Services.Concrete;
 using Serilog;
 
 namespace OrderWebAPI

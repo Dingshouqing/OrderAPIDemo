@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36203.30
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderWebAPI", "Order.WebAPI\OrderWebAPI.csproj", "{A040E7E5-F19B-A397-CA77-EF49E124F3F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderSvc.WebAPI", "Order.WebAPI\OrderSvc.WebAPI.csproj", "{A040E7E5-F19B-A397-CA77-EF49E124F3F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Tests", "Order.Tests\Order.Tests.csproj", "{614353FC-69AA-0357-4566-4752D36B7416}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderSvc.DataContract", "..\Order.DataContract\OrderSvc.DataContract.csproj", "{1606A703-2851-4A0E-8A72-ADA584E6B1CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{A040E7E5-F19B-A397-CA77-EF49E124F3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A040E7E5-F19B-A397-CA77-EF49E124F3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A040E7E5-F19B-A397-CA77-EF49E124F3F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{614353FC-69AA-0357-4566-4752D36B7416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{614353FC-69AA-0357-4566-4752D36B7416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{614353FC-69AA-0357-4566-4752D36B7416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{614353FC-69AA-0357-4566-4752D36B7416}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1606A703-2851-4A0E-8A72-ADA584E6B1CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1606A703-2851-4A0E-8A72-ADA584E6B1CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1606A703-2851-4A0E-8A72-ADA584E6B1CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1606A703-2851-4A0E-8A72-ADA584E6B1CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

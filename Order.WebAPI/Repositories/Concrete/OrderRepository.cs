@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OrderWebAPI.Data;
-using OrderWebAPI.Model;
+using OrderSvc.DataContract.Model;
+using OrderSvc.WebAPI.Data;
 
-namespace OrderWebAPI.Repositories.Concrete
+namespace OrderSvc.WebAPI.Repositories.Concrete
 {
     public class OrderRepository(OrderDbContext _context, ILogger<OrderRepository> _logger) : IOrderRepository
     {

@@ -1,8 +1,8 @@
-﻿using OrderWebAPI.DTOs;
-using OrderWebAPI.Exceptions;
-using OrderWebAPI.Model;
+﻿using OrderSvc.DataContract.DTOs;
+using OrderSvc.DataContract.Model;
+using OrderSvc.WebAPI.Exceptions;
 
-namespace OrderWebAPI.Utilities
+namespace OrderSvc.WebAPI.Utilities
 {
     public static class Extensions
     {
