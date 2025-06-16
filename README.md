@@ -69,6 +69,10 @@ OrderService.Tests/
    cd .\OrderSvc.WebAPI
    dotnet run
    ```
+![image](https://github.com/user-attachments/assets/281e26a5-d998-4f74-a95f-31db2f2d05c8)
+then open your browser you'll be able to visit the swagger and call the API
+![image](https://github.com/user-attachments/assets/0841dc18-b7f6-4f96-b867-17c2da24485c)
+
 
 The API will be available at:
 - **HTTP**: `http://localhost:5009`
