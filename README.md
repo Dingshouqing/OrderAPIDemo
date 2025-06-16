@@ -66,6 +66,7 @@ OrderService.Tests/
 
 5. **Run the application:**
    ```bash
+   cd .\OrderSvc.WebAPI
    dotnet run
    ```
 
